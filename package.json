@@ -1,0 +1,27 @@
+{
+  "name": "space-trader",
+  "version": "0.1.0",
+  "description": "A port of the classic Palm OS space trader game for the Playdate.",
+  "scripts": {
+    "clean": "rm -fr build dist",
+    "mkdirs": "mkdir -p build dist",
+    "prebuild": "pnpm clean && pnpm mkdirs",
+    "build": "tstl && mkdir -p dist && pdc build dist/space-traders",
+    "prerun": "pnpm build",
+    "dev": "PlaydateSimulator dist/space-traders.pdx"
+  },
+  "keywords": [
+    "space trader",
+    "space traders",
+    "space-trader",
+    "playdate"
+  ],
+  "author": "fieldju@gmail.com",
+  "license": "GPL-2.0-only",
+  "dependencies": {
+    "lua-types": "^2.13.1",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.1.6",
+    "typescript-to-lua": "^1.16.3"
+  }
+}
