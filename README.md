@@ -4,7 +4,7 @@ A port of the classic Palm OS space trader game for the Playdate.
 
 # Development
 
-This project assumes that you have the Playdate SDK installed and its bins availible on your path
+This project assumes that you have pnpm and the [Playdate SDK](https://play.date/dev/) installed and its bin dir available on your path.
 
 ```shell
 pnpm install
