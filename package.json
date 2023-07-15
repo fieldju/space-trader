@@ -5,10 +5,27 @@
   "scripts": {
     "clean": "rm -fr build dist",
     "mkdirs": "mkdir -p build dist",
-    "prebuild": "pnpm clean && pnpm mkdirs",
     "build": "tstl && mkdir -p dist && pdc build dist/space-traders",
-    "prerun": "pnpm build",
-    "dev": "PlaydateSimulator dist/space-traders.pdx"
+    "watch:reload": "npm-watch dev",
+    "watch:rebuild": "npm-watch build",
+    "dev": "pnpm build && PlaydateSimulator dist/space-traders.pdx"
+  },
+  "watch": {
+    "dev": {
+      "patterns": [
+        "src"
+      ],
+      "extensions": "ts",
+      "quiet": false
+    },
+    "build": {
+      "patterns": [
+        "src"
+      ],
+      "extensions": "ts",
+      "legacyWatch": true,
+      "quiet": false
+    }
   },
   "keywords": [
     "space trader",
@@ -19,7 +36,9 @@
   "author": "fieldju@gmail.com",
   "license": "GPL-2.0-only",
   "dependencies": {
+    "concurrently": "^8.2.0",
     "lua-types": "^2.13.1",
+    "npm-watch": "^0.11.0",
     "ts-node": "^10.9.1",
     "typescript": "^5.1.6",
     "typescript-to-lua": "^1.16.3"
